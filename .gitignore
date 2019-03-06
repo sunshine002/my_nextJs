@@ -5,6 +5,8 @@
 # JetBrains IDE
 .idea
 
+.next
+
 # 远程公共模块目录
 bower_components
 
@@ -22,6 +24,9 @@ npm-debug.log
 
 # 发布输出目录
 release
+
+# 静态文件导出目录
+out
 
 # 不提交的本地配置文件
 
