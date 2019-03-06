@@ -21,4 +21,7 @@
 ## nextjs中配置反向代理
 
 
+cross-env NODE_ENV=development PORT=3000 node server.js
+
+
 

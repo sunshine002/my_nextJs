@@ -22,7 +22,11 @@ module.exports = withTs(withLess(withCss({
   lessLoaderOptions: {
     javascriptEnabled: true,
     importLoaders: 1,
-  }
+  },
+  cssLoaderOptions: {
+    javascriptEnabled: true,
+    importLoaders: 1,
+  },
 })));
     // webpack(config/* , { buildId, dev, isServer, defaultLoaders } */) {
     //   config.module.rules.push({ test: /\.scss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] });
