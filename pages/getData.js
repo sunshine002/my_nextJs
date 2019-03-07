@@ -29,7 +29,7 @@ export default class extends React.Component {
       const data = res.data;
       const code = data.retcode;
       if(code === 200){
-        return data.message;
+        return data.data.message;
       }else{
         // 返回码非200走reject
         return Promise.reject({
@@ -47,6 +47,7 @@ export default class extends React.Component {
 
   render() {
     console.log(this.props)
+    message.success(this.props.message)
     return (
       <div>
         <h3>数据获取内容：</h3>

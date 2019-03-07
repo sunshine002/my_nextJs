@@ -32,6 +32,8 @@ app的入口页面，默认为pages下的index.js文件
     {`
     测试antd库中的组件及相关样式
     `}
-    <Button type='danger'>测试antd按钮</Button>
+    <p style={{marginTop:'20px'}}>
+      <Button type='primary'>测试antd按钮</Button>
+    </p>
   </Frame>
 )

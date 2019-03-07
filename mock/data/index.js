@@ -3,10 +3,10 @@
 module.exports = {
 	// 上传接口返回值测试
 	'/nextjs/init':{
-    retcode:2100,
+    retcode:200,
     retdesc:'描述信息',
     data:{
-      message:'接口message内容'
+      message:'接口message内容99'
     }
   }
 }
