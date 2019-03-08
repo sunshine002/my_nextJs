@@ -15,13 +15,29 @@
   - 代码转换命令：
     - jscodeshift -t ./url-to-withrouter.js pages/**/*.js
 
-## out
-- 执行export命令后生成的静态站点
+## out静态导出功能
+
+- 可以next.config.js中配置要导出的页面，不配置默认导出pages下所有页面
+
+- 执行npm run export 命令后生成静态站点
+
 
 ## nextjs中配置反向代理
 
+- 根目录下新建server文件夹，前端启动dev命令更新为以下
+
+```
+<!-- package.json -->
 
 cross-env NODE_ENV=development PORT=3000 node server.js
+```
+
+## 其它
+
+查看nextjs分享文档地址：
+
+http://note.youdao.com/noteshare?id=bc5656151b1a502b6696a22ad1477389
+
 
 
 
