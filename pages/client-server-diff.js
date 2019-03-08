@@ -4,6 +4,7 @@
  * fetch用axios方式
  *
  * 对比在getInitialProps方法中用服务端渲染与客户端渲染的区别
+ *
  */
 
 import React from 'react';
@@ -44,8 +45,7 @@ export default class extends React.Component {
       message.error(err.message)
     });
 
-
-    return { userAgent, message: res||1 }
+    return { userAgent, message: res}
   }
 
   constructor(props) {
@@ -97,8 +97,22 @@ getInitialProps将不能使用在子组件中。只能使用在pages页面中。
 
 只有服务端用到的模块放在getInitialProps里，请确保正确的导入了它们
             `}
-
         </pre>
+
+        <h3>getInitialProps中调用异步接口时的应用总结</h3>
+        <pre>{`
+仅服务器(刷新页面时)
+本来我们预想的, 客户端和服务器都能输出同样的信息, 但实际上, 在这种情况下, 输出信息只显示在了服务器端的控制台上. 这是因为, 我们的页面是在服务器端进行渲染的. 我们在服务器上已经获取到了电视节目的数据, 没有理由在客户端再获取一次.
+
+从客户端获取数据（用Link标签时）
+这里, 我们只在客户端的控制台上看到了调试输入. 这是因为我们是通过客户端进行导航的. 因此从客户端获取数据是更好的方式.
+
+getInitialProps中应用fetch时：
+1. 如果添加fetch，异常情况用catch捕获时，必须用console.log来打印出err来，会在服务端打印出来，否则页面和服务端看不到任何错误信息的提示
+2. 如果添加feath, 异常情况不用catch捕获时，会走nextjs的内置错误页，在页面中呈现出来代码error信息，同时也在浏览器的控制台中打印出来
+
+        `}</pre>
+
         <style jsx>{`
           .tit {
             border:1px solid #ba2364;
