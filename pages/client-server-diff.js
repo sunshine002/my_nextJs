@@ -2,6 +2,8 @@
 /**
  * 数据获取demo
  * fetch用axios方式
+ *
+ * 对比在getInitialProps方法中用服务端渲染与客户端渲染的区别
  */
 
 import React from 'react';
@@ -25,8 +27,7 @@ export default class extends React.Component {
   static async getInitialProps({ req }) {
     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
 
-    const res = await Fetch.get('nextjs/init').then(res => {
-      console.log('resolve:' + res);
+    const res = await Fetch.get('http://127.0.0.1:3000/api/nextjs/init').then(res => {
       const data = res.data;
       const code = data.retcode;
       if (code === 200) {
@@ -43,7 +44,8 @@ export default class extends React.Component {
       message.error(err.message)
     });
 
-    return { userAgent, message: res }
+
+    return { userAgent, message: res||1 }
   }
 
   constructor(props) {

@@ -15,7 +15,7 @@ export default class MyApp extends App {
   render () {
     const {Component, pageProps} = this.props
     return <Container>
-    <p>app框架组件中的公共内容</p>
+    <p style={{paddingBottom:'50px'}}>app框架组件中的公共内容</p>
       <Component {...pageProps} />
     </Container>
   }

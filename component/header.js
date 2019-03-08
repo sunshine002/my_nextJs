@@ -22,8 +22,11 @@ const Header = () => (
       <Link href="/two/user">
         <a style={linkStyle}>二级页面非根目录(/two/user)</a>
       </Link>
-      <Link href="/getData">
-        <a style={linkStyle}>数据获取demo(/getData)</a>
+      <Link href="/client-server-diff">
+        <a style={linkStyle}>数据获取demo-看服务端渲染异步接口与客户端渲染的区别(/client-server-diff)</a>
+      </Link>
+      <Link href="/getInitialProps">
+        <a style={linkStyle}>getInitialProps 测试页(/getInitialProps)</a>
       </Link>
     </div>
   </div>

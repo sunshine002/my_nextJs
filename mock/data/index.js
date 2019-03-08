@@ -6,7 +6,7 @@ module.exports = {
     retcode:200,
     retdesc:'描述信息',
     data:{
-      message:'接口message内容99'
+      message:'从服务器调接口返回的内容',
     }
   },
 
@@ -14,7 +14,11 @@ module.exports = {
     retcode:200,
     retdesc:'描述信息',
     data:{
-      ms:'接口message内容99'
+      ms:'从客户端调接口返回的内容'
     }
+  },
+
+  '/nextjs/props':{
+    message:'getInitialProps方法中调用接口返回的数据'
   }
 }
